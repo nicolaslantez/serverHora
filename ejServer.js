@@ -1,18 +1,30 @@
 var http = require("http");
 var url = require("url");
+var fs = require("fs");
 var server = http.createServer();
 
 server.on("request",function(req,res){
-	// var d = new Date();
-	// var hora = d.getHours();
-	// var minutos = d.getMinutes();
-	// var segundos = d.getSeconds();
-
-	// var horaActual = hora + ":" + minutos + ":" + segundos;
-	// res.end(horaActual);
-
 	var urlData = url.parse(req.url,true);
-	res.end(JSON.stringify(urlData.pathname));
+	var pathname = "public"+ urlData.pathname;
+	fs.exists(pathname,function(exists){
+		if(exists){
+			fs.readFile(pathname,function(err,html){
+				if(err){
+					res.writeHead(500);
+					res.end("Ha ocurrido algo malo");
+				}else{
+					res.end(html);
+				}
+		})
+		}else{
+			res.writeHead(404);
+			res.end("No existe!");
+		}
+	});
 });
 
 server.listen(process.env.PORT || 3000);
+
+
+ 
+  

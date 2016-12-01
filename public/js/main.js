@@ -8,13 +8,13 @@ window.onload = function() {
 	},1000)
 };
 
-function show(shID) {
-	if (document.getElementById(shID)) {
-			document.getElementById(shID+'-show').style.display = 'none';
-			document.getElementById(shID).style.display = 'block';
+// function show(shID) {
+// 	if (document.getElementById(shID)) {
+// 			document.getElementById(shID+'-show').style.display = 'none';
+// 			document.getElementById(shID).style.display = 'block';
 			
-	}
-};
+// 	}
+// };
 
 // window.onmousemove = function(){
 // 	var numero = parseInt(Math.random()*10);
