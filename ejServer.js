@@ -12,7 +12,7 @@ server.on("request",function(req,res){
 	// res.end(horaActual);
 
 	var urlData = url.parse(req.url,true);
-	res.end(JSON.stringify(urlData));
+	res.end(JSON.stringify(urlData.pathname));
 });
 
 server.listen(process.env.PORT || 3000);
