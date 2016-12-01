@@ -10,4 +10,4 @@ server.on("request",function(req,res){
 	var horaActual = hora + ":" + minutos + ":" + segundos;
 	res.end(horaActual);
 });
-server.listen(3000);
+server.listen(process.env.PORT || 3000);
