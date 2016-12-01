@@ -8,6 +8,6 @@ server.on("request",function(req,res){
 	var segundos = d.getSeconds();
 
 	var horaActual = hora + ":" + minutos + ":" + segundos;
-	res.end(horaActual);
+	res.end(horaActual + "HOLAAAAA :D");
 });
 server.listen(3000);
