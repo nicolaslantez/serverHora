@@ -1,45 +1,28 @@
 body{
-	 /*background-color: rgba(91, 174, 215, 0.8);*/
-	 background-color: black;
-	 color: white;
+	 background-color: white;
+	 color: black;
 }
 
 header{
 	text-align: center;
 }
 
-header .contentLinks{
-	padding-left: 475px;
-}
-
-header .links{
-	width: 300px;
-	border: 1px dashed;
-}
-
-header .links a{
-	color: white;
-	font-size: 18px;
-	margin: 10px;
-}
-
-header .links{
-	background-color: grey;
-}
-
 header .topBar img{
-	height: 100px;
-	width: 100px;
+	width: 100%;
 	border-image: 3px;
 	border-color: blue;
 }
 
 .backButton a{
-	color: white;
+	color: black;
 }
 
-
-
+.navbar-centered{
+	display: inline-block;
+  	float: none;
+	text-align: center;
+	background-color: @brand-primary: darken(#428bca, 6.5%);
+}
 
 .more {
 	display: none;
@@ -53,3 +36,5 @@ a.showLink {
 a.showLink:hover{
 	border-bottom: 1px dotted #36f; 
 }
+
+
