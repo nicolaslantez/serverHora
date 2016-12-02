@@ -1,7 +1,9 @@
 var http = require("http");
 var url = require("url");
 var fs = require("fs");
+var mu  = require('mu2');
 var server = http.createServer();
+mu.root = __dirname + '/templates';
 
 server.on("request",function(req,res){
 	var urlData = url.parse(req.url,true);
