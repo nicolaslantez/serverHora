@@ -21,7 +21,7 @@ server.on("request",function(req,res){
 		});
 	}
 	else if(urlData.pathname == "/stats"){
-		if(urlData.query.user == 'ADMIN' && urlData.query.password == 'ADMIN'){
+		if(urlData.query.user == 'ADMIN' || urlData.query.user == 'admin' && urlData.query.password == 'ADMIN' || urlData.query.password == 'admin'){
 			res.end("Cantidad de Visitas:" + cantidadDeVisitas);
 		}
 		else{
