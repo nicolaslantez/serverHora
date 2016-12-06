@@ -2,12 +2,14 @@ var http = require("http");
 var url = require("url");
 var fs = require("fs");
 var server = http.createServer();
+var cantidadDeVisitas = 0;
 
 
 server.on("request",function(req,res){
 	var urlData = url.parse(req.url,true);
 	var pathname;
 	if(urlData.pathname == "/"){
+		cantidadDeVisitas++;
 		pathname = "public/index.html";
 		fs.readFile(pathname,function(err,html){
 			if(err){
@@ -17,6 +19,14 @@ server.on("request",function(req,res){
 				res.end(html);
 			}	
 		});
+	}
+	else if(urlData.pathname == "/stats"){
+		if(urlData.query.user == 'ADMIN' && urlData.query.password == 'ADMIN'){
+			res.end("Cantidad de Visitas:" + cantidadDeVisitas);
+		}
+		else{
+			res.end("Usuario o password INCORRECTOS.")
+		}
 	}else{
 	pathname = "public"+ urlData.pathname;
 	fs.exists(pathname,function(exists){
